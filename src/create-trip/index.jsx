@@ -79,6 +79,7 @@ function CreateTrip() {
 
     setLoading(false);
     SaveAiTrip(result?.response?.text())
+    
   }
 
   // const SaveAiTrip =async(TripData) => {
@@ -168,7 +169,7 @@ function CreateTrip() {
     <div className='px-5 mt-10 sm:px-10 md:px-32 lg:px-56 xl:px-10'>
 
       <h2 className='text-3xl font-bold'>Tell us your travel preferences 🏕️🌴</h2>
-      <p className='mt-3 text-xl text-gray-500'>Just provide some basic information, and our trip planner will generate a customized itinerary based your preferences.</p>
+      <p className='mt-3 text-xl text-gray-500'>Just provide some basic information, and our trip planner will generate an itinerary based on your preferences.</p>
 
       <div className='flex flex-col gap-10 mt-20'>
         <div>
@@ -234,9 +235,11 @@ function CreateTrip() {
           disabled={loading}
           onClick={OnGenerateTrip}>
           {loading ?
-            <AiOutlineLoading3Quarters className='h-7 w-7 animate-spin' /> : 'Generate Trip'
+            <AiOutlineLoading3Quarters className='w-7 h-7 animate-spin' /> : 'Generate Trip'
           }
+          
         </Button>
+        
       </div>
 
       <Dialog open={openDialog}>
@@ -245,7 +248,7 @@ function CreateTrip() {
           <DialogHeader>
 
             <DialogDescription>
-              <img src="/logo.svg" />
+              <img src="/IMG_2092.png" />
               <h2 className='text-lg font-bold mt-7'>Sign In With Google</h2>
               <p>Sign In to the App with Google Authentication Securely</p>
 
@@ -269,5 +272,4 @@ function CreateTrip() {
 }
 
 export default CreateTrip
-
 
